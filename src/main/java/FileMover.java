@@ -14,8 +14,6 @@ public class FileMover {
 			File directory = new File(uri.getPath() + "/processed");
 			if (!directory.exists()) {
 				directory.mkdir();
-				// If you require it to make the entire directory path including parents,
-				// use directory.mkdirs(); here instead.
 			}
 			System.err.println("Moving to " + Paths.get(directory.getAbsolutePath() + "/" + file.getFileName().toString()));
 			Files.move(file, Paths.get(directory.getAbsolutePath() + "/" + file.getFileName().toString()), StandardCopyOption.REPLACE_EXISTING);
